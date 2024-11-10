@@ -1,5 +1,9 @@
 package automation;
 
+import static org.testng.Assert.fail;
+
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,17 +19,42 @@ public class Demo {
 		WebDriverManager.chromedriver().setup();
 		ChromeDriver driver=new ChromeDriver();
 		driver.get("https://formfacade.com/website/google-forms-question-types-checkboxes-multi-select.html");
+		driver.manage().window().maximize();
 		WebElement dd= driver.findElement(By.xpath("//label[@for='entry.1587519277.On foot']"));
+		String url= driver.getCurrentUrl();
+		String PageSource=driver.getPageSource();
+		String Title=driver.getTitle();
+		Set<String> Win=driver.getWindowHandles();
+		String win1=driver.getWindowHandle();
+//		driver.navigate()
+//		Boolean an=driver.findElement(null).isDisplayed();
 		
-		Actions ac= new Actions(driver);
-		ac.moveToElement(dd);
-		ac.perform();
-	
-//		Thread.sleep(2000);
-		dd.click();
+		//basic methods
+//1) get
+//	clear
+//	close
+//	quit
+//	manage
+//	getcurrenturl
+//	getpagesource
+//	getattribute
+//	getcssvalue
+//	navigate
+//	switchto
+//	click
+//	IsDisabled
+//	isenabled
+//	isselected
+//	getwindowhandle
+//	getwindowhandles
+//	getTitle
+//	findElements
+//	FindElement
+//	sendkeys
+//	getlocation
+//	getSize
+//	getTagName
 		
-		Thread.sleep(5000);
-	    driver.close();
 	}
 
 }
